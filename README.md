@@ -26,3 +26,11 @@ To reproduce the problem, you can simply:
  | Node.js              | 26.10.0 | /opt/homebrew/Cellar/node/26.10.0_1/bin/node |
  | npm                  | 12.2.0  | /opt/homebrew/bin/npm                        |
 
+
+## SOLUTION
+The solution is simple: `cds export --keep texts`
+
+The reasoning to run cds export and strip out by default without the localization is due to: 
+- I18n in general is for human end users / UIs only
+- cds export is used in service to service integrations
+- cds export is used in data federation scenarios
